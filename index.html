@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>文藝部 提出管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>文藝部 提出管理</h1>
+  <div id="loginInfo">ログイン中のアカウント：なし</div>
+</header>
+
+<!-- ホーム画面 -->
+<section id="home" class="card">
+  <h2>ホーム</h2>
+  <p>利用するモードを選択してください</p>
+  <button id="btnMember" class="memberBtn">部員用</button>
+  <button id="btnLeader" class="leaderBtn">部長用</button>
+</section>
+
+<!-- 部員ログイン -->
+<section id="memberLogin" class="card hidden">
+  <h2>ログイン</h2>
+  <label><span>名前</span>
+    <input id="loginName" placeholder="名前を入力">
+  </label>
+  <label><span>パスワード</span>
+    <input id="loginPass" type="password" placeholder="パスワードを入力">
+  </label>
+  <div class="loginButtons">
+    <button id="loginBtn">ログイン</button>
+    <button id="signupBtn" class="green">新規作成</button>
+    <button id="backHome1" class="backBtn">ホームに戻る</button>
+  </div>
+</section>
+
+<!-- 新規作成 -->
+<section id="memberSignup" class="card hidden">
+  <h2>新規作成</h2>
+  <label><span>名前</span>
+    <input id="signupName" placeholder="名前を入力">
+  </label>
+  <label><span>パスワード</span>
+    <input id="signupPass" type="password" placeholder="パスワードを入力">
+  </label>
+  <div class="loginButtons">
+    <button id="createBtn">アカウント作成</button>
+    <button id="backLogin" class="backBtn">ログイン画面に戻る</button>
+  </div>
+</section>
+
+<!-- 部長提出箱 -->
+<section id="boxArea" class="card hidden">
+  <h2>提出箱管理（部長）</h2>
+  <label><span>提出箱タイトル</span>
+    <input id="boxTitle" placeholder="例：夏の短編小説">
+  </label>
+  <label><span>締切日</span>
+    <input id="boxDeadline" type="date">
+  </label>
+  <button id="createBoxBtn">提出箱を作成</button>
+  <div id="boxManage"></div>
+</section>
+
+<!-- 提出 -->
+<section id="submitArea" class="card hidden">
+  <h2>提出</h2>
+
+  <label><span>提出箱</span>
+    <select id="boxSelect"></select>
+  </label>
+
+  <label><span>作品名</span>
+    <input id="workTitle" placeholder="作品名を入力">
+  </label>
+
+  <label><span>提出するもの（本文）</span>
+    <textarea id="textContent" rows="4" placeholder="本文を入力"></textarea>
+  </label>
+
+  <label><span>ファイル提出（PDF・画像など）</span>
+    <input type="file" id="fileInput">
+  </label>
+
+  <button id="submitWorkBtn">提出</button>
+</section>
+
+<!-- 提出一覧 -->
+<section id="listArea" class="card hidden">
+  <h2>提出一覧</h2>
+  <div id="list"></div>
+</section>
+
+<!-- 部員用アカウント設定 -->
+<section id="accountArea" class="card hidden">
+  <h2>アカウント設定（部員）</h2>
+  <label><span>名前変更</span>
+    <input id="newName" placeholder="新しい名前">
+  </label>
+  <button id="changeNameBtn">名前を変更</button>
+</section>
+
+<button id="logoutBtn" class="backBtn hidden">ログアウト</button>
+
+<script src="script.js"></script>
+</body>
+</html>
